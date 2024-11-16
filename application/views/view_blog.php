@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Blog</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
+    <style>
+        @media (max-width: 768px) {
+            .full-width {
+                width: 90%;
+            }
+            
+            .none {
+                display: none;
+            }
+
+            .full-screen {
+                min-width: 130%;
+            }
+
+            .full-screen .container-fluid img {
+                min-width: 110%;
+                object-fit: cover;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: #F8F9FA">
 
@@ -36,8 +56,8 @@
         </div>
     </nav>
 
-    <div class="container-fluid d-flex mt-5 px-5">
-        <div class="container-md d-flex flex-column pt-5" style="width: 140%">
+    <div class="container-fluid d-flex justify-content-center mt-5 px-5 full-width">
+        <div class="container-md d-flex flex-column pt-5 full-screen" style="width: 140%">
             <?php $i = 1; ?>
             <?php foreach ($data as $row): ?>
                 <div class="container-fluid">
@@ -55,16 +75,16 @@
             <?php endforeach; ?>
         </div>
 
-        <div class="container-sm d-flex flex-column pt-5">
-            <h4 class="px-2">Blog Populer</h4>
+        <div class="container-sm d-flex flex-column pt-5 none">
+            <h4 class="px-2 none">Blog Populer</h4>
             
             <?php $i = 1;?>
             <?php foreach ($data as $row): ?>
-                <div class="container-fluid mt-2 mb-3">
-                    <img src="<?= $row['gambar_blog']; ?>" class="d-block w-100" alt="img-1" width="400" height="200" style="border-radius: 15px">
+                <div class="container-fluid mt-2 mb-3 none">
+                    <img src="<?= $row['gambar_blog']; ?>" class="d-block w-100 object-fit-fill" alt="img-1" width="400" height="200" style="border-radius: 15px">
 
-                    <h3 class="mt-3 fs-4"><?= $row['judul_blog']; ?></h3>
-                    <a href="#<?= $i ?>" style="scroll-margin-top: 1.5em"><button type="button" class="btn btn-primary">Read More</button></a>
+                    <h3 class="mt-3 fs-4 none"><?= $row['judul_blog']; ?></h3>
+                    <a href="#<?= $i ?>" style="scroll-margin-top: 1.5em"><button type="button" class="btn btn-primary none">Read More</button></a>
                 </div>
             <?php $i++; ?>
             <?php endforeach; ?>

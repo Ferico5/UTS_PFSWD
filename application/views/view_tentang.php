@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Tentang</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
+    <style>
+        @media (max-width: 768px) {
+            .container-sm {
+                flex-direction: column;
+                width: 90%;
+                margin-top: 5em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+                line-height: 1.5;
+                width: 150%;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: #F8F9FA">
 
